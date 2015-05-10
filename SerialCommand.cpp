@@ -124,7 +124,6 @@ void SerialCommand::readSerial()
 				Serial.println("]");
 				#endif
 				// Compare the found command against the list of known commands for a match
-				if (strncmp(token,CommandList[i].command,SERIALCOMMANDBUFFER) == 0) 
 				{
 					#ifdef SERIALCOMMANDDEBUG
 					Serial.print("Matched Command: "); 
@@ -183,4 +182,6 @@ void SerialCommand::addCommand(const char *command, void (*function)())
 void SerialCommand::addDefaultHandler(void (*function)(const char *))
 {
 	defaultHandler = function;
+
+	{
 }
