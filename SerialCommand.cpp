@@ -124,6 +124,8 @@ void SerialCommand::readSerial()
 				Serial.println("]");
 				#endif
 				// Compare the found command against the list of known commands for a match
+				String tmp = token;
+				if(tmp.equalsIgnoreCase(CommandList[i].command))
 				{
 					#ifdef SERIALCOMMANDDEBUG
 					Serial.print("Matched Command: "); 
@@ -182,6 +184,17 @@ void SerialCommand::addCommand(const char *command, void (*function)())
 void SerialCommand::addDefaultHandler(void (*function)(const char *))
 {
 	defaultHandler = function;
+}
 
+
+//This is to return all command tokens defined
+String SerialCommand::getCommandList()
+{
+	String tmpComs = "";
+	for(int i=0; i < numCommand; i++)
 	{
+		tmpComs += CommandList[i].command;
+		if(i < numCommand - 1) tmpComs += ", ";
+	}
+	return tmpComs;
 }
