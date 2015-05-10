@@ -64,6 +64,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
 
 #define SERIALCOMMANDBUFFER 16
+
+
 #define MAXSERIALCOMMANDS	10
 #define MAXDELIMETER 2
 
@@ -82,7 +84,7 @@ class SerialCommand
 		char *next();         // returns pointer to next token found in command buffer (for getting arguments to commands)
 		void readSerial();    // Main entry point.  
 		void addCommand(const char *, void(*)());   // Add commands to processing dictionary
-		void addDefaultHandler(void (*function)());    // A handler to call when no valid command received. 
+		void addDefaultHandler(void (*function)(const char *));    // A handler to call when no valid command received. 
 	
 	private:
 		char inChar;          // A character read from the serial stream 
@@ -98,7 +100,7 @@ class SerialCommand
 		} SerialCommandCallback;            // Data structure to hold Command/Handler function key-value pairs
 		int numCommand;
 		SerialCommandCallback CommandList[MAXSERIALCOMMANDS];   // Actual definition for command/handler array
-		void (*defaultHandler)();           // Pointer to the default handler function 
+		void (*defaultHandler)(const char *);           // Pointer to the default handler function 
 		int usingSoftwareSerial;            // Used as boolean to see if we're using SoftwareSerial object or not
 		#ifndef SERIALCOMMAND_HARDWAREONLY 
 		SoftwareSerial *SoftSerial;         // Pointer to a user-created SoftwareSerial object
