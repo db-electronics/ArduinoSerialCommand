@@ -1,5 +1,5 @@
 // Demo Code for SerialCommand Library
-// Leandro Spaeth
+// Steven Cogswell / Leandro Spaeth
 // May 2015
 
 #include <SoftwareSerial.h> //Need to include this, even if it's not needed due to way the Arduino IDE compiles
