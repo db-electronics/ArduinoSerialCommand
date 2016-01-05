@@ -63,11 +63,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 #include <string.h>
 
 
-#define SERIALCOMMANDBUFFER 16
-
-
-#define MAXSERIALCOMMANDS	10
-#define MAXDELIMETER 2
+#define SERIALCOMMANDBUFFER 	32
+#define MAXSERIALCOMMANDS	32
+#define MAXDELIMETER 		2
 
 #define SERIALCOMMANDDEBUG 1
 #undef SERIALCOMMANDDEBUG      // Comment this out to run the library in debug mode (verbose messages)
