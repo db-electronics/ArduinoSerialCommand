@@ -1,5 +1,24 @@
-SerialCommand	KEYWORD1
-clearBuffer	KEYWORD2
-next	KEYWORD2
-readSerial	KEYWORD2
-addCommand	KEYWORd2
+#######################################
+# Syntax Coloring Map dbDumper
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+SerialCommand		KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+clearBuffer			KEYWORD2
+next				KEYWORD2
+readSerial			KEYWORD2
+addCommand			KEYWORD2
+addDefaultHandler	KEYWORD2
+getCommandList
+
+#######################################
+# Constants (LITERAL1)
+#######################################
